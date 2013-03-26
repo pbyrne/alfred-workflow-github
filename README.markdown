@@ -30,6 +30,6 @@ probably be terrible. Use at your own risk.
 TODO
 ----
 
-- [ ] Capture username and password and access the GitHub API to request an auth token, then store it inside the workflow.
-- [ ] Use this auth token to fetch the list of repos the user has access to.
-- [ ] Use this list to provide auto-complete for one of the triggers.
+- Capture username and password and access the GitHub API to request an auth token, then store it inside the workflow.
+- Use this auth token to fetch the list of repos the user has access to.
+- Use this list to provide auto-complete for one of the triggers.
