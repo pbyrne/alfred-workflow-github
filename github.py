@@ -8,17 +8,14 @@ import requests
 import json
 
 class Client:
-  def __init__(self, username, token):
+  def __init__(self, username, token, org_names=[]):
     self.username = username
     self.token = token
+    self.org_names = org_names
 
   def repo_names(self):
     """Array of names of repositories you have access to"""
     return [repo['full_name'] for repo in self.repositories()]
-
-  def org_names(self):
-    """Array of names of orgs you have access to"""
-    return [org['login'] for org in self.orgs()]
 
   def repositories(self):
     """Array of Dicts of information about repositores you have access to"""
@@ -26,7 +23,7 @@ class Client:
 
   def org_repositories(self):
     org_repos = []
-    for org_name in self.org_names():
+    for org_name in self.org_names:
       org_repos += self.get("orgs/%s/repos" % org_name)
     return org_repos
 
