@@ -22,7 +22,7 @@ class Client:
 
   def repositories(self):
     """Array of Dicts of information about repositores you have access to"""
-    return self.get("user/repos")
+    return self.get("user/repos") + self.org_repositories()
 
   def org_repositories(self):
     org_repos = []
